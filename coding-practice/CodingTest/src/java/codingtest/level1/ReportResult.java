@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
  * URL: https://school.programmers.co.kr/learn/courses/30/lessons/92334
  * ################################
  */
-public class GetReportResult {
+public class ReportResult {
     public int[] solution(String[] id_list, String[] report, int k) {
         int[] answer = new int[id_list.length];
 
