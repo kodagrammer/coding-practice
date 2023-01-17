@@ -1,4 +1,4 @@
-package java.codingtest.level1;
+package programmers.codingtest.level1;
 
 /*################################
  * 플랫폼: 프로그래머스

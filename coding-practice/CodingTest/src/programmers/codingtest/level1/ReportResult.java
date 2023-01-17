@@ -1,4 +1,4 @@
-package java.codingtest.level1;
+package programmers.codingtest.level1;
 
 import java.util.*;
 import java.util.stream.Collectors;
