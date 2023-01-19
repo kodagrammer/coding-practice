@@ -34,4 +34,4 @@ build/
 .vscode/
 
 ### propertis ###
-application.yml
+resources/
