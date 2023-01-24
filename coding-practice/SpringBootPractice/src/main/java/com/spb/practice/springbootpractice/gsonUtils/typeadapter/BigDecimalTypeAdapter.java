@@ -6,19 +6,20 @@ import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 
-public class DoubleTypeAdapter extends TypeAdapter<Double> {
+public class BigDecimalTypeAdapter extends TypeAdapter<BigDecimal> {
     @Override
-    public void write(JsonWriter jsonWriter, Double aDouble) throws IOException {
-        if (aDouble == null) {
+    public void write(JsonWriter jsonWriter, BigDecimal bigDecimal) throws IOException {
+        if (bigDecimal == null) {
             jsonWriter.nullValue();
             return;
         }
-        jsonWriter.value(aDouble);
+        jsonWriter.value(bigDecimal);
     }
 
     @Override
-    public Double read(JsonReader jsonReader) throws IOException {
+    public BigDecimal read(JsonReader jsonReader) throws IOException {
         if (jsonReader.peek() == JsonToken.NULL) {
             jsonReader.nextNull();
             return null;
@@ -28,7 +29,7 @@ public class DoubleTypeAdapter extends TypeAdapter<Double> {
             if("".equals(stringValue)){
                 return null;
             } else {
-                Double value = Double.valueOf(stringValue);
+                BigDecimal value = new BigDecimal(stringValue);
                 return value;
             }
         } catch (NumberFormatException e) {

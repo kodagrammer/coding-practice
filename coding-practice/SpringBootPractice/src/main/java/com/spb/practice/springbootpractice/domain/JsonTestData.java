@@ -5,14 +5,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.Setter;
 
-@Data
-@Setter(AccessLevel.PACKAGE)
-@Builder
-public class JsonTestData {
+import java.math.BigDecimal;
 
-    private Double id;
+@Data
+@Setter(AccessLevel.NONE)
+public class JsonTestData {
+    private String idx;
     private String name;
-    private String phone;
-    private String address;
-    private String email;
+    private double mathScore;
+    private Double englishScore;
+    private BigDecimal avr;
 }
