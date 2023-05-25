@@ -1,4 +1,4 @@
-package com.spb.practice.springbootpractice.gsonUtils.typeadapter;
+package com.spb.practice.springbootpractice.utils.typeadapter;
 
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;

@@ -4,9 +4,9 @@ import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
 import com.google.gson.reflect.TypeToken;
 import com.spb.practice.springbootpractice.domain.JsonTestData;
-import com.spb.practice.springbootpractice.gsonUtils.GsonUtils;
-import com.spb.practice.springbootpractice.gsonUtils.typeadapter.DoubleTypeAdapter;
-import com.spb.practice.springbootpractice.gsonUtils.typeadapter.StringTypeAdapter;
+import com.spb.practice.springbootpractice.utils.GsonUtils;
+import com.spb.practice.springbootpractice.utils.typeadapter.DoubleTypeAdapter;
+import com.spb.practice.springbootpractice.utils.typeadapter.StringTypeAdapter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
