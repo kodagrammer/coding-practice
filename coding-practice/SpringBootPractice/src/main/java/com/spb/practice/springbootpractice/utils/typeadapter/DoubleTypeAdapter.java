@@ -25,10 +25,14 @@ public class DoubleTypeAdapter extends TypeAdapter<Double> {
         }
         String stringValue = jsonReader.nextString();
         try {
-            Double value = Double.valueOf(stringValue);
-            return value;
+            if("".equals(stringValue)){
+                return null;
+            } else {
+                Double value = Double.valueOf(stringValue);
+                return value;
+            }
         } catch (NumberFormatException e) {
-            return null;
+            throw e;
         }
     }
 }
