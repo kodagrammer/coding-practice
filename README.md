@@ -24,5 +24,6 @@ repository for practicing coding anything, 개인적으로 공부했던 코딩�
 
 ### SpringBootPractice
 + <img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" /> <img src="https://img.shields.io/badge/Spring Boot-6DB33F?style=flat&logo=SpringBoot&logoColor=white" />
-+ Spring Boot 관련 연습 코드
++ Spring Boot/기타 라이브러리 관련 연습 코드
   + [Gson.fromJson(Object) Empty String / TypeCasting 처리](https://velog.io/@dyko/gson-custom-typeadapter)
+  + [Json을 Java 객체로 변환하는 방법(Gson,Jackson,JSON-SIMPLE)](https://velog.io/@dyko/json-parser-libraries)
