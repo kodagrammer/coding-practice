@@ -9,7 +9,7 @@ import com.spb.practice.springbootpractice.utils.deserializer.NullLongDeserializ
 import com.spb.practice.springbootpractice.utils.deserializer.NullStringDeserializer;
 
 import java.math.BigDecimal;
-import java.util.List;
+import java.util.*;
 
 public class JacksonParserImpl<T> implements JsonParserComp<T> {
     @Override
@@ -26,6 +26,15 @@ public class JacksonParserImpl<T> implements JsonParserComp<T> {
         mapper.registerModule(module);
 
         List<T> data = mapper.readValue(json, mapper.getTypeFactory().constructCollectionType(List.class, type));
+        System.out.println("=== JACKSON_PARSER \t\tData Count: " + data.size() + ", 소요시간(s): " + this.getElapsedSec(startTime));
+        return data;
+    }
+
+    @Override
+    public List<Map<String, Object>> parseJsonToListMap(String json) throws Exception {
+        long startTime = System.currentTimeMillis();
+        ObjectMapper mapper = new ObjectMapper();
+        List<Map<String, Object>> data = mapper.readValue(json, mapper.getTypeFactory().constructCollectionType(List.class, Map.class));
         System.out.println("=== JACKSON_PARSER \t\tData Count: " + data.size() + ", 소요시간(s): " + this.getElapsedSec(startTime));
         return data;
     }
