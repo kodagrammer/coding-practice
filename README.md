@@ -18,7 +18,9 @@ repository for practicing coding anything, 개인적으로 공부했던 코딩�
 + 코딩테스트 코드
   + [프로그래머스 - 신고 결과 받기](https://velog.io/@dyko/programmers-leve1-report)
   + [프로그래머스 - 삼총사](https://velog.io/@dyko/programmers-threepeople)
-  + [프로그래머스 - 개인정보 수집 유효기간](https://velog.io/@dyko/programmers-leve1-privacyPolicy)
+  + [프로그래머스 - 개인정보 수집 유효기간](https://velog.io/@dyko/programmers-leve1-privacyPolicy) 
++ 회사 연말 코딩테스트 코드
+  + 지락실 토롱이 진실게임 
 
 </br >
 
