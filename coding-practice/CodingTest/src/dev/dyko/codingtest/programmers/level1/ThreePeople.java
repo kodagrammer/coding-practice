@@ -1,4 +1,4 @@
-package programmers.codingtest.level1;
+package dev.dyko.codingtest.programmers.level1;
 
 /*################################
  * 플랫폼: 프로그래머스

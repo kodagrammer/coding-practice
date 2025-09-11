@@ -1,4 +1,4 @@
-package programmers.codingtest.level1;
+package dev.dyko.codingtest.programmers.level1;
 
 import java.util.*;
 

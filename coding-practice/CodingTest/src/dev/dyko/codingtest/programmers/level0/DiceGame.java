@@ -1,4 +1,4 @@
-package programmers.codingtest.level0;
+package dev.dyko.codingtest.programmers.level0;
 
 import java.util.Arrays;
 import java.util.HashMap;

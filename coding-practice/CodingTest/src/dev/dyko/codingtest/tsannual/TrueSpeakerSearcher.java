@@ -1,4 +1,4 @@
-package tidesquare.codingtest.annual;
+package dev.dyko.codingtest.tsannual;
 
 import java.util.ArrayList;
 import java.util.Arrays;

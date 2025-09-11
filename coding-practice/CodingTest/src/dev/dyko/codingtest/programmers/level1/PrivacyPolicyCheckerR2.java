@@ -1,6 +1,5 @@
-package programmers.codingtest.level1;
+package dev.dyko.codingtest.programmers.level1;
 
-import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
