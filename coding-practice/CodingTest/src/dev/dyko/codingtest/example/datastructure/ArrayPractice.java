@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.TreeSet;
 
-public class ArrayExample {
+public class ArrayPractice {
     // 크기를 정확히 알 때 -> 배열, 정확하지 않을 때(동적) -> ArrayList
 
     public static void main(String[] args) {
@@ -17,9 +17,9 @@ public class ArrayExample {
                         + (Arrays.equals(result1, predictedResult1) ? "맞았습니다." : "틀렸습니다.")
                         + "\n" + Arrays.toString(result1));
 
-        // 배열 중복제거 후 정렬 문제
+        // 배열 중복제거 후 역정렬 문제
         int[] array2 = {2, 5, 2, 6, 7, 8, 6, -1, 3, -2, -1};
-        int[] predictedResult2 = {-1, -2, 2, 3, 5, 6, 7, 8};
+        int[] predictedResult2 = {8, 7, 6, 5, 3, 2, -1, -2};
 
         int[] result2 = controlArray(array2);
         System.out.println("예상결과가 "
