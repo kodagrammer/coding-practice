@@ -7,6 +7,10 @@ public class TreePractice {
      * 이진 탐색 트리 시간복잡도는 트리 균형에 따라 다름
      *   - 균형잡힌 경우, O(logN)
      *   - 균형이 맞지 않는 경우, O(N)
+     * 트리를 표현하는 방법
+     *   - 배열
+     *   - 포인터
+     *   - 인접리스트
      */
     public static void main(String[] args) {
         int[] arr1 = {1, 2, 3, 4, 5, 6, 7};
