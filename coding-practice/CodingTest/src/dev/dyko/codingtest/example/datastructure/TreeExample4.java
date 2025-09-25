@@ -52,9 +52,9 @@ public class TreeExample4 {
     }
 
     public int[][] solution(int[][] nodeinfo) {
-        // 시간복잡도: O(NlogN) + O(N) + O(N) --> O(NlogN)
+        // 시간복잡도: O(N^2) + O(N) + O(N) --> O(N^2)
 
-        // O(2N + NlogN) --> O(NlogN)
+        // O(N^2)
         Node[] nodes = makeTree(nodeinfo);
 
         ArrayList<Integer> preorder = new ArrayList<>();
@@ -111,7 +111,7 @@ public class TreeExample4 {
 
         Node root = nodes[0];
 
-        // 노드 별 left, right 정보 입력 : O(N)
+        // 노드 별 left, right 정보 입력 : O(N) --> 최악의 경우 O(N^2)
         for(int i = 1; i < nodes.length; i++) {
             Node parent = root;
             while(true){
