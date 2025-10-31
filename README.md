@@ -32,6 +32,6 @@ repository for practicing coding anything, 개인적으로 공부했던 코딩�
   
   | 패키지 | 설명 | 관련 링크 |
   |:--|:--|:--|
-  | example | `코딩테스트 합격자 되기 - 자바편` 예제 풀이 | - |
-  | programmers | 프로그래머스 문제 풀이 | [신고 결과 받기](https://velog.io/@dyko/programmers-leve1-report)<br>[삼총사](https://velog.io/@dyko/programmers-threepeople)<br>[개인정보 수집 유효기간](https://velog.io/@dyko/programmers-leve1-privacyPolicy) |
+  | [example](coding-practice/CodingTest/src/dev/dyko/codingtest/example) | `코딩테스트 합격자 되기 - 자바편` 예제 풀이 | - |
+  | [programmers](coding-practice/CodingTest/src/dev/dyko/codingtest/programmers) | 프로그래머스 문제 풀이 | [신고 결과 받기](https://velog.io/@dyko/programmers-leve1-report)<br>[삼총사](https://velog.io/@dyko/programmers-threepeople)<br>[개인정보 수집 유효기간](https://velog.io/@dyko/programmers-leve1-privacyPolicy) |
   | tsannual | 회사 연말 코딩테스트 코드 (지락실 토롱이 진실게임) | - |
