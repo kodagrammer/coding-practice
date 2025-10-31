@@ -38,3 +38,6 @@ build/
 
 ### propertis ###
 resources/
+
+### others ###
+src/dev/dyko/codingtest/job/
