@@ -2,8 +2,7 @@ package dev.dyko.codingtest.programmers.level3;
 
 import org.junit.jupiter.api.Assertions;
 
-import java.util.ArrayDeque;
-import java.util.Queue;
+import java.util.*;
 import java.util.function.Function;
 
 /**
@@ -28,7 +27,7 @@ import java.util.function.Function;
 public class NumberBaseballGame {
     public static void main(String[] args) {
         // 예시 정답
-        int answer = 9876;
+        int answer = 1375;
 
         // submit 함수 정의
         Function<Integer, String> submit = guess -> {
@@ -50,18 +49,26 @@ public class NumberBaseballGame {
         };
 
         // 테스트
-        Assertions.assertEquals("1S 2B", submit.apply(7865));  // 출력 예: Guess: 1243 -> 2S 2B
+        Assertions.assertEquals("1S 1B", submit.apply(7865));  // 출력 예: Guess: 1243 -> 2S 2B
 
         // solution 함수 테스트
-        int n1 = 3024;
-        int n2 = 33;
+        int n1 = 15;
+        int n2 = 6;
 
         NumberBaseballGame game = new NumberBaseballGame();
-        int result1 = game.solution(n1, submit);
-        Assertions.assertEquals(answer, result1);
+        // 1차 답안
+//        int result1 = game.solution(n1, submit);
+//        Assertions.assertEquals(answer, result1);
+        // 2차 답안
+        int result12 = game.solution2(n1, submit);
+        Assertions.assertEquals(answer, result12);
 
-        int result2 = game.solution(n2, submit);
-        Assertions.assertEquals(answer, result2);
+        // 1차 답안
+//        int result2 = game.solution(n2, submit);
+//        Assertions.assertEquals(answer, result2);
+        // 2차 답안
+        int result22 = game.solution2(n2, submit);
+        Assertions.assertEquals(answer, result22);
     }
 
     // 숫자를 배열로 변환
@@ -76,6 +83,8 @@ public class NumberBaseballGame {
         }
         return false;
     }
+
+    /**************************** 1차 답안 로직 **********************************/
 
     // 1차 답안 --> 시간복잡도 최대 O(15), n < 15 에선 모두 Fail
     public int solution(int n, Function<Integer, String> submit) {
@@ -127,5 +136,92 @@ public class NumberBaseballGame {
         }
 
         return result[0] * 1000 + result[1] * 100 + result[2] * 10 + result[3];
+    }
+
+    /**************************** 2차 답안 로직 **********************************/
+
+    // 2차 답안 --> Mastermind 최적 전략
+    // 후보집단 P(9, 4) = 3024 --> 1~9, 4자리 상수로 고정되어 있어 O(1)
+    public int solution2(int n, Function<Integer, String> submit) {
+        // 가능한 모든 후보군 추출
+        List<int[]> candidates = generateCandidates();
+
+        int cnt = 0;
+
+        // 후보가 잔존하면 계속 시도
+        while (candidates.size() > 1) {
+            if (cnt >= n) return 0;  // 제한 초과하면 실패 처리
+
+            // 확인할 숫자
+            int[] guess = candidates.get(0);
+            int number = toInt(guess);
+
+            // submit 결과 확인
+            String applied = submit.apply(number);
+            System.out.println("현재 submit 실행 횟수 : " + ++cnt + " 확인한 숫자 : " + number);
+
+            int strike = Integer.parseInt(applied.split("S")[0].trim());
+            int ball = Integer.parseInt(applied.split("S")[1].replace("B","").trim());
+
+            // 후보군 제거
+            List<int[]> filtered = new ArrayList<>();
+            for(int[] candidate : candidates) {
+                // 스트라이크와 볼이 일치하는 후보군만 남김
+                if(matched(guess, candidate, strike, ball)) {
+                    filtered.add(candidate);
+                }
+            }
+            candidates = filtered;
+        }
+
+        if (candidates.isEmpty()) return 0;
+        return toInt(candidates.get(0));
+    }
+
+    private int toInt(int[] arr) {
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i] * (int)Math.pow(10, arr.length - i - 1);
+        }
+        return sum;
+    }
+
+    private List<int[]> generateCandidates() {
+        List<int[]> candidates = new ArrayList<>();
+
+        for (int a = 1; a <= 9; a++) {
+            for (int b = 1; b <= 9; b++) {
+                if (b == a) continue;
+                for (int c = 1; c <= 9; c++) {
+                    if (c == a || c == b) continue;
+                    for (int d = 1; d <= 9; d++) {
+                        if (d == a || d == b || d == c) continue;
+
+                        candidates.add(new int[]{a, b, c, d});
+                    }
+                }
+            }
+        }
+
+        return candidates;
+    }
+
+    private boolean matched(int[] guess, int[] candidate, int strike, int ball) {
+        int s = 0, b = 0;
+
+        for(int i = 0; i < 4; i++) {
+            if(guess[i] == candidate[i]) {
+                s++;
+            } else {
+                for(int j : candidate) {
+                    if(j == guess[i]) {
+                        b++;
+                        break;
+                    }
+                }
+            }
+        }
+
+        return s == strike && b == ball;
     }
 }
